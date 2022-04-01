@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fdfdfd;
+    margin: 0 auto;
+    width: 60%;
+}
+
+h1 {
+    font-family: arial;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 230px;
+    min-height: 350px;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    padding: 16px 8px;
+    border-radius: 5px;
+    border: 2px solid #fdfdfd;
+    margin: 16px;
+}
+
+.card__header {
+    overflow: hidden;
+    max-height: 25px;
+}
+
+.card__title {
+    font-size: 1.3rem;
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+}
+
+.card__image {
+    align-self: center;
+    max-width: inherit;
+    max-height: 250px;
+}
+
+.card__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+    height: 100%;
+}
+.card__text {    
+    overflow: hidden;
+    max-height: 24px;
+}
+
+.card__price::before {
+    content: "R$ ";
+}
+
+.card__price {
+    margin: 5px 0;
+    color: #8b8b8b;
+}
+
+
+.card__text {
+    padding: 0;
+    margin: 0;
+    font-size: 1.25rem;
+    align-self: flex-start;
+}
+
+.card__button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card__button--success {
+    background-color: #27af27;
+    color: #FFF;    
+    font-weight: bold;
+}
+
+.card__button--success:hover {
+    background-color: #64b664;
+}
