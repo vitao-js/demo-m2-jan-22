@@ -1,11 +1,31 @@
-// document.getElementById("produto");
-// document.getElementsByClassName("box")
-// document.querySelector(".produto")
-// document.querySelectorAll(".box")
+function adicionarEventListenerCard() {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(function(card) {
+        card.addEventListener("click", function(event) {
+            // alert("Mais info do produto");
+        }, true)
+    })
+}
 
+function adicionarEventListenerBotao() {
+    const buttons = document.querySelectorAll(".card__button")
+    buttons.forEach(btn => {
+        btn.addEventListener("click", comprarProduto, true)
+    })  
+}
 
-//Diferença appendchild vs append
+function comprarProduto (event) {
+    event.stopPropagation();
 
+    console.log(event.target.id);
+}
+
+function removerEventListenerBotao() {
+    const buttons = document.querySelectorAll(".card__button");
+    buttons.forEach((btn) => {
+        btn.removeEventListener("click", comprarProduto)
+    }) 
+}
 function criarCards(arrayProdutos) {
     const box = document.querySelector(".box");
 
@@ -63,6 +83,7 @@ function criarCardFooter(elem) {
     button.classList.add("card__button", "card__button--success");
 
     button.innerText = "Comprar";
+    button.id = elem.id;
 
     footer.appendChild(button)
 
@@ -70,3 +91,6 @@ function criarCardFooter(elem) {
 }
 
 criarCards(dataProdutos);
+adicionarEventListenerCard();
+adicionarEventListenerBotao();
+// removerEventListenerBotao();
