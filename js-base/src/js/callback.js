@@ -24,6 +24,4 @@ function dividir(valores) {
 }
 
 let resultado = calculadora(VALORES_CALLBACK, somar);
-console.log(resultado);
-
 

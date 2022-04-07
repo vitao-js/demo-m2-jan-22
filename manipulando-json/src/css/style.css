@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #131516;
+    margin: 0 auto;
+}
+
+.card {
+    max-width: 1000px;
+    height: 400px;
+    background: rgba(0,0,0,0.7);
+    background-size: cover;
+    background-blend-mode: darken;
+    margin: 10px auto;
+    box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__title {
+    text-align: center;
+    color: rgb(83 66 207);
+    margin: 25px 0;
+}
+
+.card__content {
+    padding: 20px;
+    background: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0));
+    width: 30%;
+}
+
+.card__list {
+    color: rgb(83, 66, 207);
+    list-style: none;   
+}
+
+.card__list li {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.list__value {
+    font-size: 1rem;
+    font-weight: 300;
+    color: white;
+    float: right;
+}
+
+.card__detail {
+    display: flex;
+    align-items: center;
+    padding-right: 60px;
+}
+
+.card__button {
+    border: none;
+    padding: 15px;
+    background-color: rgb(83, 66, 207);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.card__button:hover {
+    background-color: rgba(83, 66, 207, 0.7);
+}
+
+.card__button::after{
+    content: " "
+}
