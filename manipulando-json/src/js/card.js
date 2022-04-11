@@ -4,8 +4,13 @@ function criarCard(rocket) {
     card.classList.add("card", "box__card");
 
     const content = criarCardContent(rocket);
+    const detail = criarCardDetail();
 
-    card.append(content)
+    const [ ,imagem2] = rocket.flickr_images
+
+    card.style.background = `url(${imagem2})`
+
+    card.append(content, detail)
 
     box.appendChild(card)
 }
@@ -35,37 +40,55 @@ function criarCardTitle(rocket){
 
 function criarCardInfo(rocket){
     const info = document.createElement("div");
-    const ul = document.createElement("ul");
 
     info.classList.add("card__info")
-    ul.classList.add("card__list", "list")
-
-    Object.entries(rocket).forEach((entrada) => {
-        const li = criarListItem(entrada);
-
-        ul.appendChild(li);
-    })
+    
+    const ul = criarList(rocket);
 
     info.appendChild(ul)
 
     return info;
 }
 
-function criarListItem(entrada) {
-    const [chave, valor] = entrada;
+function criarList(rocket) {
+    const ignorarChave = ["rocket_name", "flickr_images"];
+    const ul = document.createElement("ul");
 
-    const li = document.createElement("li");
-    const span = document.createElement("span");
+    ul.classList.add("card__list", "list");
 
-    li.classList.add("card__info");
-    span.classList.add("list__value");  
+    Object.entries(rocket).forEach((entrada) => {
+        const [chave, valor] = entrada;
 
-    li.innerText = chave;
-    span.innerText = valor;
+        //TRUE => !TRUE => FALSE
+        //FALSE => !FALSE => TRUE
 
-    li.appendChild(span);
+        if (!ignorarChave.includes(chave)) {
+            const li = document.createElement("li");
+            const span = document.createElement("span");
+        
+            li.classList.add("card__info");
+            span.classList.add("list__value");  
+        
+            li.innerText = chave;
+            span.innerText = valor;
+        
+            li.appendChild(span);
+            ul.appendChild(li);
+        }
+    })
 
-    return li
+    return ul;
 }
 
-function criarCardDetail(){}
+function criarCardDetail(){
+    const detail = document.createElement("div");
+    const button = document.createElement("button");
+    detail.classList.add("card__detail");
+    button.classList.add("card__button", "card__button--detail");
+
+    button.innerText = "Mais detalhes";
+
+    detail.append(button);
+
+    return detail;
+}
