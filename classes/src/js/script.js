@@ -8,3 +8,9 @@
  * Herança
  * Polimorfismo
  */
+
+
+/**
+ * Getter => Get => Receber
+ * Setter => Set => Atribuir
+ */

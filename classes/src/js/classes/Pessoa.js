@@ -2,13 +2,24 @@
  * Sugar Syntax
  */
 class Pessoa {
-    constructor(nome, altura, idade, nacionalidade, estadoCivil) {
-        this.nome = nome;
-        this.altura = altura;
+    constructor(nome, idade, cpf) {
+        this._nome = nome;
+        // this.altura = altura;
         this.idade = idade;
-        this.nacionalidade = nacionalidade;
-        this.estadoCivil = estadoCivil || "Solteiro";
+        this._cpf = cpf;
+        
+        // this.nacionalidade = nacionalidade;
+        // this.estadoCivil = estadoCivil || "Solteiro";
     }
+
+    get nome() {
+        return this._nome.toUpperCase();
+    }
+
+    set nome(nome) {
+        this._nome = nome + " Lima"
+    }
+
 
     codar() {
         console.log("Oh meu deus, encontrei um bug");
@@ -23,11 +34,12 @@ class Pessoa {
     }
 }
 
-const victor = new Pessoa("Victor Augusto", "9", 18, "Brasileiro", "Solteiro");
-const jardel = new Pessoa("Jardel F.", "7", 20, "Brasileiro", "Casado");
 
-console.log(victor)
-console.log(jardel)
+// const victor = new Pessoa("Victor Augusto", "9", 18, "Brasileiro", "Solteiro");
+// const jardel = new Pessoa("Jardel F.", "7", 20, "Brasileiro", "Casado");
+
+// console.log(victor)
+// console.log(jardel)
 
 
 /**
@@ -44,8 +56,6 @@ console.log(jardel)
 // Pessoa.prototype.codar = function() {
 //     console.log("Oh meu deus, encontrei um bug");
 // }
-
-
 
 
 
