@@ -3,7 +3,7 @@
  */
 class Pessoa {
     constructor(nome, idade, cpf) {
-        this._nome = nome;
+        this.nome = nome;
         // this.altura = altura;
         this.idade = idade;
         this._cpf = cpf;
@@ -12,13 +12,13 @@ class Pessoa {
         // this.estadoCivil = estadoCivil || "Solteiro";
     }
 
-    get nome() {
-        return this._nome.toUpperCase();
-    }
+    // get nome() {
+    //     return this._nome.toUpperCase();
+    // }
 
-    set nome(nome) {
-        this._nome = nome + " Lima"
-    }
+    // set nome(nome) {
+    //     this._nome = nome + " Lima"
+    // }
 
 
     codar() {

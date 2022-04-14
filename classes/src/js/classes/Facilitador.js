@@ -14,15 +14,23 @@ class Facilitador extends Pessoa {
     }
 
     corrigirAtividade() {
-
+        console.log("Teje corrigido")
     }
 
     fazerOneOnOne() {
 
     }
+
+    static contratarCoach(coach) {
+        console.log("Teje contratada");
+    }
 }
 
-const maria = new Facilitador("Maria Ferrari", 18,"12345678909","m2", ["HTML", "JS", "CSS"], ["Kenzinho", "Kenzinho2"]);
-maria.nome = "Jardel F.";
+// const maria = new Facilitador("Maria Ferrari", 18,"12345678909","m2", ["HTML", "JS", "CSS"], ["Kenzinho", "Kenzinho2"]);
+// // maria.fazerOneOnOne();
 
-console.log(maria.idade)
+// // console.log(maria.contratarCoach("Ana Vitória Cisne"));
+// // Facilitador.contratarCoach("Ana Vitória Cisne")
+
+// // console.log(Facilitador.prototype)
+// console.log(maria);
