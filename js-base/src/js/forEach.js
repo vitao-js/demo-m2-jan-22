@@ -9,6 +9,6 @@ function newForEach(array, callback) {
 
 const meuArray = [10,12,14,16];
 
-newForEach(meuArray, () => {
-    console.log("Victor")    
-});
+// newForEach(meuArray, () => {
+//     console.log("Victor")    
+// });
