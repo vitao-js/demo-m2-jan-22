@@ -1,4 +1,6 @@
 class Filme {
+    static idioma = "Português";
+
     constructor(id, nome, categorias, classificacao, elenco, imagem, diretores) {
         this._vezesAssistido    = 0;
         this._favoritos         = 0;
@@ -22,11 +24,15 @@ class Filme {
         return this;
     }
 
+    static alterarIdioma() {
+        console.log("Foi alterado")
+    }
+
     /**
      * @todo Avaliacao + Histórico de Avaliacao
      */
     addAvaliacao() {
-        //
+        console.log("Foi avaliado")
     }
 }
 

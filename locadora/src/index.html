@@ -6,19 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <main>
-        <input id="inputNomeUsuario" type="text" placeholder="Nome Usuario">
-        <button id="btnCriarUsuario">Criar Usuario</button>
+        <!-- <input id="inputNomeUsuario" type="text" placeholder="Nome Usuario">
+        <button id="btnCriarUsuario">Criar Usuario</button> -->
+        <section>
+            <div class="card">
+                <div class="card__header">
+                    <div class="card__title">
+                        <p>Filme de teste</p>
+                    </div>
+                    <div class="card__icons">
+                        <img class="favorite__icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEfElEQVRoge2XTWhcVRiGnzNJQZBCUoNK0TS2lRIHI9KFiKBWSC1BSgjRShUpCMYu3BlGXHSuu8SVoLiIG0WDSIvWhSJplMSNLroo1pBoKW0tGo2hrRhBaeZ7Xcydyf05dzKTTHZzmMv9O3PO+7z3/e6ZgVZrtVZrtVbbRHP1dFo5/HqfsGEc/UjdSF2SljFdlvja3OqnnV++da6RiZcefvFBM4ZMesJJPbJwTOkXM01hduru85PnNwVwY3B0zza1jQuGACcTyJCEJDCtHUszYEHnmbdna425+MhLB1zJijI9hoTC8ZAojy8EhAOfKrm2Qs8PH15qGGBl8LWDSJ+A60hNsCYaWeRYkpN9RNvNV3ZMT/wVHe/648c6/vu3/R2k5zIMSOzLDKDrmDuya/7jM3UDlMXzBVJ7agLPpFGwcP+zww12ffvuPMDiQyP3Obd6Wsa9vidY/g5ABoS0ak4Du+dPpiBSADcGR/e0K3dWosPjcMJ181yrQv0NDCM5mZ2UtN37BP2CERGw8v1rLre6/56F05ejetuTANuUGzdTI7HxA0jbMfs8vHbLBlyPwADSjtKqGweOZD6BlcOv9sly5yS5dGyMhMMpB7NgN+F6sp9w9O29+NmP3idQMve0k7l6HE5fM4/DPtdDMSRhSLmeBsZhDANVgFwsP6b+qigzFN2UOE9tyt6U3Mxz3+J9zEINUQhDKj2ZWQMy20XCNX9EbAOxIRGTmnmvFbPuWgCdjcXGH5EyoDcCCbEZELVhb8sEwPSHpO6069kF3BTX63kbUR3v96jkWA0Im01lO5lX7xapg5iISGHb2tssHRFbu++Jacwg02wmgJner12o6YImInzterI4IwVaBfYUdqxP2C8B64wPoppTK/Gfjx6fWfuh5S/glCvrFV48Av5+ZH2P6BwzvYtfHciuAcDdLL1sOc5iujWrWGsuSLEsZwhedw0o94uaA/yTc3Y8qTeXvND13cQCJY3Esx3f0u/nSGZjWTYPrCVqwteP0KhQvMCwkX2/TS2sCwBwx/fvTcrsRO0FqZ7FqPG8R2Gh+sRO5BenJn1aa/6h+XX/CwWMsS1YjKrjVcVWo0VUOM4U9C5NvZGlcd2/lFcfeL4AjGVmtu7izOhXgQ330fP1xNcFAHD1/qMF1YDIdj5xnlh5s1xH4LS++LoBAK7kjxaQjdV85dUbswpouI+f1y++IQCAK73PFkwWfxKVybPynohZVGjSdRBO1C2+YQCAS/ueKSgJ0QTXw+Mg34D4DQEAXNw7XAAba5br5Y8F+aXphsRvGADgwu6hwMmKDfwMCE+TwgGzIL/cuPhNAQBc6BkMJCv6aiIdl4w3jmnD4jcNAPBT91MBopjpuld45d7mxEMTAADm7xoIXAWiIg5qvuebIR6aBAAwv3MgQCpmF2nlnKaJhyYCAMzvPBRgFLPFC0TTxEOTAQDm7jwUOFnR4zrQXPGwBQAAc7cfDEDFyAKFMwvy175pqnjYIgCAua7+EdCoypO8mV+entiquVqt1Vqt1Vptw+1/f/8C1qtN/YgAAAAASUVORK5CYII="/>
+                        <img class="save__icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEQElEQVR4nO1bTWwbRRT+3sxmix2w03BAggo1cClSkODWckbiTyInDkhARfmRQAipiXCjxq2ChF1ScDiAKIdW0EMkpHKiCCFxQz0gceFQCW4goOTikNhuun+z83qwLHn909ju7rre5bvtjD3+3rfvzbyZeQZSDurXwcfXM7Vp7zkAhwXjnhg5hQYNqgP4OX/D+J4+WbR6faanAPXi2vOa+XMCPRApw5hAjH9A/HautHy5q6+zoXbyw5dAdBGAiIVdfNAAXsmXTmy0NwYE2F4+c1BI8RuAu+JkFhcYsLTiQ7Nry3+12gJvWQhaREKNBwACMlJisb0t6OZET8XKaBwgerr9MSCAx/rBeNnEDwYCNgYE0MxmvHTiBwEBG4MCaI6XzR2AgAA+p1wApftnhklFcBLUelw8xoZgCKTP/i4PoLRNA135ftrCoEsAN/UCpGwi6BLATrsASutUJUQ9Dz0s5cfNY2z4X4BejY7SSEsU9BRAg2H7Km4uY0Hfg89dLx1h0FcAS/nQKYiDvgIwgF0v+WFwy7P/hptyARQzbD/Zc8Getz91J9lesKcAtu8neoM00P1fzfWi5jE2DCSApZLrBQPfAO84yfSCgQWwfT+Rm6ShagC2bReMZGWHQwmgmFFL2LI4dBVIw/USdXI8tAAMoGq7iQmEkeqAPF+jlpBVYeRCqIarErFPGFkABmPLcqF4sueD2yqF87kpwiQvjbddC+j4Gtv25M4HoRRDXvcU6hN6eBJaNeiO42J3AlPlUMth/7Nc3JgwEUIVoLkyOBO1aQq9IJoBVC0H1oTcKxhRDNpMlx3Mkolpo/snGLhKwDkBvgoAGjTPwFsEzEfB51aIRACgKcKW5UKZjPw+A83CdK4Ti6Vc+b0LBGpPHn5i8LnGyY9eY9IVgHJR8epE5P8JqLketmwPYP7RV3g0Vy6c7zAeAEAgzpUL5w32D4HxbdS8WojMA1oQIAZjI1e2jxJW98ybp8srmwAWdlbOvkDgLwDMRssvQphCbOUN44mH1k+9PIjx7ZgpFS4ZrOaj9oZIPECAOGPIjbl1/yihOPJuKQ5vCN0DTCmrWQMjvfV+iNIbQvOA4FsPx/B2ROUNAQ8gjLavNaWoZqRxOMy33g8zpcIlBeMxAD+MOESj/SHgAVLQrtZ896AjCRKcNeTFg5WVY72Wtqhwb2npbwY/2yiePcaMCoD8EF//vf0h4AFTkr4bdBRTymp2io7MVYqvxml8CwTi3AcnLhisHhlmbmDir4LjtOHfN1ezjSxdc7We6TeAIMEZKSKL9VEx4NxwJVfPPEmfvuu0Grr+IfLnO8U5x5y64ip9f2ffPik3pcDCw5XTv4RDO1xsra4dMDz6DOCFzj5ifOOb5hv7V4/vBNr7DfbH0vsv+qDXmXGfYFwTEl/OfXz66yiIh43tU2ceJy2fIcYBgDc16PL+cuHXcfO6I3ETRlK6TrxzQ0EAAAAASUVORK5CYII="/>
+                    </div>
+                </div>
+                <div class="card__content">
+                    <div class="card__image">
+                        <img src="./assets/img/image.png" alt="">
+                    </div>
+                    <div class="card__details">
+                        <p class="nomeFilme">Nome do filme</p>
+                        <p>Vezes assistido: <span>0</span></p>
+                        <p>Vezes favoritos: <span>0</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-
-    <script type="module" src="./js/classes/Lista.js"></script>
-    <script type="module" src="./js/classes/Categoria.js"></script>
-    <script type="module" src="./js/classes/Filme.js"></script>
-    <script type="module" src="./js/classes/Usuario.js"></script>
     <script type="module" src="./js/script.js"></script>
 </body>
 </html>

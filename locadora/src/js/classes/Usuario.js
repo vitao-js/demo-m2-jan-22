@@ -9,4 +9,15 @@ class Usuario {
     }
 }
 
-export { Usuario }
+class UsuarioDiferenciado extends Usuario {
+    constructor(){
+
+    }
+}
+
+export default Usuario;
+
+export {
+    Usuario,
+    UsuarioDiferenciado
+}
