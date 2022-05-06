@@ -20,6 +20,33 @@ const Api = class Api{
         const data = await response.json()
         return data
     }
+
+    static async updateUser(body, user_id){
+        const response = await fetch(`${this.BASEURL}/${user_id}`,{
+            method:'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        }).then(resp => resp.json()).catch(err => console.log(err))
+        
+        return response
+        /*
+        const data = await response.json()
+        return data
+        */
+    }
+
+    static async deleteUser(user_id){
+        const response = await fetch(`${this.BASEURL}/${user_id}`,{
+            method:'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }}
+            )
+        const data = await response.json()
+        return data
+    }
 }
 
 export default Api
