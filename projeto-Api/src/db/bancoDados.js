@@ -1,64 +1,12 @@
+import Api from '../models/Api.js';
+
 class BancoDados {
-  static clientes = [
-    {
-      nome: 'Jardel',
-      idade: 20,
-      cpf: '46469467342',
-      data_nasc: '27/02/1750',
-      sexo: 'Masculino',
-      email: 'guilhermeemanuelbarbosa@toyota.com.br',
-      endereco: {
-        cep: '38055292',
-        rua: 'Rua Dois',
-        numero: 698,
-        bairro: 'Residencial Veneza',
-        cidade: 'Uberaba',
-        estado: 'MG',
-      },
-      telefone_fixo: '3425232094',
-      pedidos: [1, 5, 7],
-    },
-    {
-      nome: 'Jardel',
-      idade: 20,
-      cpf: '46469467342',
-      data_nasc: '27/02/1750',
-      sexo: 'Masculino',
-      email: 'guilhermeemanuelbarbosa@toyota.com.br',
-      endereco: {
-        cep: '38055292',
-        rua: 'Rua Dois',
-        numero: 698,
-        bairro: 'Residencial Veneza',
-        cidade: 'Uberaba',
-        estado: 'MG',
-      },
-      telefone_fixo: '3425232094',
-      pedidos: [1, 5, 7],
-    },
-    {
-      id: 2,
-      nome: 'Anderson Cauê André Galvão',
-      idade: 69,
-      cpf: '30385835027',
-      data_nasc: '21/01/1953',
-      sexo: 'Masculino',
-      email: 'anderson_caue_galvao@pq.cnpq.br',
-      endereco: {
-        cep: '64045380',
-        rua: 'Avenida João XXIII',
-        numero: 455,
-        bairro: 'São João',
-        cidade: 'Teresina',
-        estado: 'PI',
-      },
-      telefone_fixo: '8639405162',
-      pedidos: [1, 9, 10, 12],
-    },
-  ];
+  static clientes = [];
   static lista = document.getElementById('lista');
 
-  static renderizar() {
+  static async renderizar() {
+    this.clientes = await Api.getUsers();
+
     this.lista.innerHTML = '';
     this.clientes.forEach((cliente) => {
       const card = this.template(cliente);
@@ -83,7 +31,18 @@ class BancoDados {
     <p><span>Pedidos:</span> ${cliente.pedidos.join(', ')}.</p>
     `;
 
+    const button = document.createElement('button');
+    button.innerText = 'Deletar Usuário';
+    button.id = cliente.id;
+    button.addEventListener('click', this.deletarUsuario);
+    container.appendChild(button);
     return container;
+  }
+
+  static async deletarUsuario(event) {
+    const id = event.currentTarget.id;
+    await Api.deleteUser(id);
+    BancoDados.renderizar();
   }
 }
 
