@@ -28,7 +28,7 @@ class BancoDados {
     <p><span>Telefone:</span> ${cliente.telefone_fixo}</p>
     <p><span>E-mail:</span> ${cliente.email}</p>
     <p><span>Data de nascimento:</span> ${cliente.data_nasc}</p>
-    <p><span>Pedidos:</span> ${cliente.pedidos.join(', ')}.</p>
+    <p><span>Pedidos:</span> ${cliente.pedidos ? cliente.pedidos.join(', ') : 0}.</p>
     `;
 
     const button = document.createElement('button');
