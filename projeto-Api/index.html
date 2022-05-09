@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
     <title>Demo</title>
-  </head>
-  <body>
-    <header>
-      <img />
-      <h1>Klientes</h1>
-      <button>Adicionar Cliente</button>
+</head>
+<body>
+    <header class="header">
+        <img class='header__logo'src="./src/img/image 1.png"></img>
+        <h1 class="header__title">Klientes</h1>
+        <button class="header__button" id="addClient">Adicionar Cliente</button>
     </header>
-    <ul id="lista"></ul>
+    <section>
+        <ul id="lista" class="list"></ul>
+    </section>
+</body>
+
     <script type="module" src="./src/js/script.js"></script>
-  </body>
 </html>
