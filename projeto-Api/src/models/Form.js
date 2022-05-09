@@ -4,11 +4,13 @@ import { User } from './User.js';
 export class Formulario {
   static createInput(nome) {
     const input = document.createElement('input');
+
     input.setAttribute('type', User.tipos[nome]);
     input.setAttribute('name', nome);
-    input.setAttribute('placeholder', `Preencha o ${User.descricoes[nome]}`);
+    input.setAttribute('placeholder', `Preencha ${User.descricoes[nome]}`);
     input.classList.add('form__input');
     input.required = true;
+
     return input;
   }
 

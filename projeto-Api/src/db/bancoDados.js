@@ -7,9 +7,10 @@ class BancoDados {
   static lista = document.getElementById('lista');
 
   static async renderizar() {
-    this.lista.innerHTML == '';
+    this.lista.innerHTML = '';
 
     await BancoDados.listarClientes();
+
     this.clientes.forEach((cliente) => {
       const card = this.template(cliente);
       this.lista.appendChild(card);
@@ -20,6 +21,7 @@ class BancoDados {
     const data = await Api.getUsers();
 
     this.clientes = data.map((element) => new User(element));
+    console.log(this.clientes);
   }
 
   static async cadastrarCliente(event) {
@@ -37,6 +39,8 @@ class BancoDados {
 
       inputs[i].value = '';
     }
+
+    console.log(data);
 
     const { cep, rua, numero, bairro, cidade, estado, ...novoCliente } = data;
 
@@ -111,8 +115,8 @@ class BancoDados {
     const pContainer = document.createElement('div');
     pContainer.classList.add('card__innerContainer');
 
-    Object.entries(valores).forEach((arrayDeValores) => {
-      const p = templateP(arrayDeValores[0], arrayDeValores[1]);
+    Object.entries(valores).forEach(([chave, valor]) => {
+      const p = templateP(chave, valor);
       pContainer.appendChild(p);
     });
 
