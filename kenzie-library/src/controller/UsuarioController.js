@@ -37,12 +37,10 @@ class UsuarioController {
         })
         .then((response) => {
             localStorage.setItem("Token", response)
+            window.location = `./../pages/livro.html`
         })
         .catch((err) => {
             console.error(err);
         });
-        
-        const token = localStorage.getItem("token");
-        dasdasdadasdasdadasdasd
     }
 }

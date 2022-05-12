@@ -42,7 +42,3 @@ function logarUsuario(event) {
 
 adicionaSubmitLogin();
 adicionaSubmitRegistrar();
-
-
-
-console.log(localStorage.getItem("token"))
