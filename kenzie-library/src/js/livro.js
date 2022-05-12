@@ -1,7 +1,8 @@
 async function receberMeusLivros() {
     const meusLivros = await LivrosController.receberMeusLivros();
 
-    criarTabela(meusLivros);
+    await criarTabela(meusLivros);
+    criarHandlerLinhas();
 }
 
 function criarTabela(listaLivros) {
@@ -26,6 +27,26 @@ function criarTabela(listaLivros) {
         tr.append(titulo, autor, categoria)
         tbody.append(tr);
     })
+}
+
+function criarHandlerLinhas() {
+    const linhas = document.querySelectorAll("#tabela-livros tbody tr")
+    
+    linhas.forEach((linha) => {
+        linha.addEventListener("click", editarLivro)
+    })
+}
+
+async function editarLivro(event){
+    const id = event.currentTarget.dataset.livroId;
+    const livros = await LivrosController.receberMeusLivros();
+    const livroSelecionado = livros.find((livro) => {
+        return livro.id == id;
+    })
+
+    localStorage.setItem("EditBook", JSON.stringify(livroSelecionado))
+    localStorage.setItem("EditBookId", id);
+    window.location = "./../pages/editarLivro.html"
 }
 
 receberMeusLivros();

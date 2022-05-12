@@ -14,4 +14,20 @@ class LivrosController {
         .then(response => response)
         .catch(err => console.error(err));
     }
+
+    static atualizarLivros(dadosLivro, id) {
+        const URL = `${this.BASE_URL}my/livros/${id}`
+
+        return fetch(URL, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("Token")}`
+            },
+            body: JSON.stringify(dadosLivro)
+        })
+        .then(response => response.json())
+        .then(response => response)
+        .catch(err => console.error(err));
+    }
 }

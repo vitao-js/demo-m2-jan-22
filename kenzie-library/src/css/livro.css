@@ -1,0 +1,5 @@
+table tbody tr:hover {
+    cursor: pointer;
+    background-color: #c5c8cf;
+    border-collapse: collapse;
+}
